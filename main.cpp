@@ -71,4 +71,6 @@ int main() // клент
 
     int y = a.GetY();
     cout << y << endl;
+
+    
 }
