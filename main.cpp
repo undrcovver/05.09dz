@@ -18,33 +18,57 @@ public:   // интерфейс объекта
         x = _x;
         y = _y;
     }
-    void Sum(Point b) 
+    void SetSymbol(char sym)
     {
-        cout << "+" << " X: " << x + b.x << "\tY: " << y + b.y << endl;
+        symbol = sym;
     }
-        void Mil(Point b) 
+    char GetSymbol()
     {
-        cout << "-" << " X: " << x - b.x << "\tY: " << y - b.y << endl;
+        return symbol;
     }
-        void Mul(Point b) 
+    void SetX(int a)
     {
-        cout << "*" << " X: " << x + b.x << "\tY: " << y * b.y << endl;
+        if(a>=0)
+        {
+            x=a;
+        }
     }
-
+    int GetX()
+    {
+        return x;
+    }
+    void SetY(int b)
+    {
+        if(b>=0)
+        {
+            y=b;
+        }
+    }
+    int GetY()
+    {
+        return y;
+    }
 };
 int main() // клент
 {
-    Point a,b;
+    Point a;
     //cout << sizeof(a) << endl; // 12
 
     a.Init('A', 10, -20);
     a.Print();
+    a.SetSymbol('B');
+    a.Print();
+    a.SetX(5);
+    a.Print();
+    a.SetY(16);
+    a.Print();
 
-    b.Init('B', 5, 16);
-    b.Print();
+    char c = a.GetSymbol();
+    cout << c << endl;
 
-    a.Sum(b);
-    a.Mil(b);
-    a.Mul(b);
+    int x = a.GetX();
+    cout << x << endl;
 
+    int y = a.GetY();
+    cout << y << endl;
 }
